@@ -1,10 +1,36 @@
+// FixDebugSix3.java
+// Prompt user for value to start
+// Value must be between 1 and 20 inclusive
+// At command line, count down to blastoff
+// With a brief pause between each displayed value
 package debugging;
 
-public class FixDebugSix3 {
+import javax.swing.*;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+public class FixDebugSix3
+{
+	public static void main(String[] args)
+	{
+		String userNumString;
+		int userNum, val;
+		final int MIN = 1;
+		final int MAX = 20;
+		userNumString = JOptionPane.showInputDialog(null, "Enter a number between " + MIN + " and " + MAX + " inclusive");
+		userNum = Integer.parseInt(userNumString);
+		while(userNum < MIN | userNum > MAX)
+		{
+			userNumString = JOptionPane.showInputDialog(null, "Number out of range\nEnter a number between "+ 
+					MIN + " and " + MAX + " inclusive");
+			userNum = Integer.parseInt(userNumString);
+		}
+		for(val = userNum; val > 0; --val)
+		{
+			System.out.print(val + "  ");
+			for(int x = 0; x < 100000; ++x)
+				for(int y = 0; y < 10000; ++y);
+				// Adjust these number for faster or slower performance
+		}
+		System.out.println("Blastoff!");
 	}
 
 }
