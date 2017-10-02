@@ -32,10 +32,10 @@ public class FixDebugSix4
 			int answer = (int) (result * 10 + low);
 			// multiply by 10 and add low -- random is at least the value of low
 			// only use answer if it is low enough
-			if(answer <= low)
+			if(answer <= high)
 			{
 				System.out.print(answer + "  ");
-				count = count - 1;
+				count = count + 1;
 			}
 		}
 		System.out.println();
