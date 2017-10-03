@@ -6,22 +6,22 @@ public class TestScoreStatistics {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] scores = new int [];
+		int [] scores = new int [10000];
 		int score;
 		int count = 0;
 		int total = 0;
-		int highest = 0;
-		int lowest = 0;
 		final int MIN = 0;
 		final int MAX = 100;
 		final int QUIT = 999;
+		int highest = MIN;
+		int lowest = MAX;
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter quiz score or " + QUIT + " to quit >> ");
 		score = input.nextInt();
 		
 		while(score != QUIT) {
-			if (MIN <= score <= MAX) {
+			if (MIN <= score && score <= MAX) {
 				scores[count] = score;
 				total += scores[count];
 				if (scores[count] > highest) {
@@ -40,7 +40,7 @@ public class TestScoreStatistics {
 				score = input.nextInt();
 			}
 		}
-		System.out.print("The scores enterd were: ");
+		System.out.println("The scores enterd were: ");
 		for(int x = 0; x < count; ++ x) {
 			System.out.println(scores[x] + " ");
 		}
