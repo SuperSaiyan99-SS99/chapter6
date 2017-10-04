@@ -28,7 +28,7 @@ public class RightTriangle {
 			b = input.nextDouble();
 			a2 = a * a;
 			b2 = b * b;
-			c2 = a2 * b2;
+			c2 = a2 + b2;
 			c = Math.sqrt(c2);
 			area = a * b / 2;
 			perimeter = a + b + c;
